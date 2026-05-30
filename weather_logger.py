@@ -12,5 +12,13 @@ class WeatherLogger:
         return data
             
         
-   
+    
+    def save(self, logs: list, filepath: str) -> None:
+        
+        with open(filepath, 'w') as f:
+            Fieldnames= ["date", "temp_c", "humidity_pct", "wind_kph", "condition"]
+            writer = csv.DictWriter(f, fieldnames=Fieldnames)
+            writer.writeheader()
+            writer.writerows(logs)
+        print(f"Successfuly was Saved The Data in file where path is {filepath}")
         
