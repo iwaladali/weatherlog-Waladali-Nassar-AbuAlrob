@@ -54,4 +54,9 @@ class WeatherLogger:
             "condition":    condition
                      })
         return logs
+    
+    def get_by_month(self, logs: list, year: int, month: int) -> list:
+        prefix = f"{year}-{month:02d}"   # e.g. "2026-03"
+        return [r for r in logs if r["date"].startswith(prefix)]
+    
         
