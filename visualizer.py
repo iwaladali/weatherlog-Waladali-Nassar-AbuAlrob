@@ -40,3 +40,36 @@ class Visualizer:
         ax.legend()
         plt.tight_layout()
         plt.show()
+        
+        
+    def monthly_avg_chart(self, stats: dict):
+
+        months = sorted(stats.keys())
+
+        avgs = [stats[m]["avg_temp"] for m in months]
+
+        colors = [
+            "orangered" if t >= 25
+            else "steelblue" if t <= 15
+            else "gold"
+            for t in avgs
+        ]
+
+        fig, ax = plt.subplots(figsize=(10, 5))
+
+        ax.bar(months, avgs, color=colors, edgecolor="black")
+
+        ax.set_ylabel("Avg Temperature (°C)")
+        ax.set_title("Monthly Average Temperature")
+
+        ax.set_xticklabels(months, rotation=30)
+
+        for i, v in enumerate(avgs):
+            ax.text(i, v + 0.2, f"{v}°C", ha="center", fontsize=10)
+
+        plt.tight_layout()
+        plt.show()
+        
+        
+        
+        
