@@ -70,6 +70,48 @@ class Visualizer:
         plt.tight_layout()
         plt.show()
         
-        
+def humidity_scatter(self, logs: list):
+    if not logs:
+        print("No weather logs available.")
+        return
+
+    CONDITION_COLORS = {
+        "Sunny":  "gold",
+        "Cloudy": "steelblue",
+        "Rainy":  "royalblue",
+        "Foggy":  "gray",
+    }
+
+    fig, ax = plt.subplots(figsize=(9, 6))
+
+    conditions = ["Sunny", "Cloudy", "Rainy", "Foggy"]
+
+    for cond in conditions:
+        subset = [r for r in logs if r["condition"] == cond]
+
+        if not subset:
+            continue
+
+        temps = [float(r["temp_c"]) for r in subset]
+        humidities = [float(r["humidity_pct"]) for r in subset]
+
+        ax.scatter(
+            temps,
+            humidities,
+            color=CONDITION_COLORS[cond],
+            label=cond,
+            alpha=0.7,
+            edgecolors="black",
+            linewidths=0.5,
+            s=60
+        )
+
+    ax.set_xlabel("Temperature (°C)")
+    ax.set_ylabel("Humidity (%)")
+    ax.set_title("Humidity vs Temperature by Condition")
+    ax.legend(title="Condition")
+
+    plt.tight_layout()
+    plt.show() 
         
         
