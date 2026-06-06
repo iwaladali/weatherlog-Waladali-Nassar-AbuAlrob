@@ -12,6 +12,7 @@
 WeatherLog is a Python app that records, analyzes, and shows daily weather info. It stores temps, humidity, wind speeds, and weather conditons in a neat format. Its main aim? To help spot weather trends, like monthly averages and wild swings easily. For data storage and stats, it relies on CSV files and NumPy. Plus, it uses Matplotlib to make graphs that aid in making sense of all this info. With these tools, WeatherLog is handy for everyday 
 
 3. Libraries Used
+
 | Library | Version | How it was used |
 |---|---|---|
 | csv | built-in | Load and save weather records |
@@ -180,6 +181,7 @@ The application completed all five stages successfully, displayed the analysis r
 *Full output of running python main.py*
 
 7. Individual Contributions
+
 | Student | ID | Files | Commit Count | GitHub Username |
 |---|---|---|---|---|
 | Ibrahim Waladali    | 202211030  | weather_logger.py, create_sample_data.py | 7 | iwaladali |
