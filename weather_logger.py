@@ -1,6 +1,7 @@
 
 import csv
 class WeatherLogger:
+
     def load(self, filepath: str) -> list:
         
         try:
@@ -46,6 +47,7 @@ class WeatherLogger:
 
         if condition not in VALID_CONDITIONS:
             raise ValueError(f"Condition must be one of {VALID_CONDITIONS}")
+        
         logs.append({
             "date":         date_str,
             "temp_c":       str(temp_c),
