@@ -7,7 +7,7 @@ class WeatherAnalyzer:
         groups = {}
 
         for r in logs:
-            key = r["date"][:7]
+            key = r["date"][:7]     
 
             if key not in groups:
                 groups[key] = []

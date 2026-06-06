@@ -69,6 +69,7 @@ class Visualizer:
 
         plt.tight_layout()
         plt.show()
+        
     def humidity_scatter(self, logs: list):
         if not logs:
             print("No weather logs available.")
@@ -114,5 +115,5 @@ class Visualizer:
         plt.show()
 
 
-        
+
         
